@@ -14,13 +14,11 @@
     <!-- Font Awesome CSS -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha384-3z90ZfJWdS5N5+5xofN5yTK25itI0F4f+MG2ZJw5Z57/0t8WjMqHv+1Mxg2X9HYK"
-      crossorigin="anonymous"
+      href="./css/fontawesome-free-6.4.0-web/css/all.min.css"
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/styles.css " />
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -43,7 +41,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
             <li class="nav-item">
@@ -51,7 +49,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>
@@ -68,7 +66,9 @@
               unique and stunning pieces that are perfect for any collection.
               Explore our portfolio and collect your favorite NFTs today!
             </p>
-            <a href="portfolio.html" class="btn btn-primary btn-lg">Explore</a>
+            <a href="#portfolio" class="btn btn-primary btn-lg">
+              Explore <i class="fas fa-chevron-down"></i>
+            </a>
           </div>
           <div class="col-md-6">
             <img
@@ -186,7 +186,7 @@
               experience. Come explore our collection today and see for yourself
               what makes Blueshift1 a leader in the world of NFT art.
             </p>
-            <a href="#" class="btn btn-secondary">Learn More</a>
+            <!-- <a href="#" class="btn btn-secondary">Learn More</a> -->
           </div>
           <!-- <div class="col-md-6">
             <img src="about-image.jpg" alt="About Me" />
@@ -241,7 +241,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2>Contact Us</h2>
+        <!-- <h2>Contact Us</h2> -->
         <div class="row">
           <!-- <div class="col-md-6">
             <form>
@@ -258,10 +258,14 @@
           </div> -->
           <div class="col-md-12">
             <h3>Our socials</h3>
-            <p>You can also connect with me on social media:</p>
+            <!-- <p>You can also connect with me on social media:</p> -->
             <ul class="list-unstyled">
-              <li><i class="fab fa-twitter"></i><a href="#">Twitter</a></li>
-              <li><i class="fab fa-instagram"></i><a href="#">Instagram</a></li>
+              <li>
+                <i class="fab fa-twitter"></i><a href="#">@blushift1_art</a>
+              </li>
+              <li>
+                <i class="fab fa-instagram"></i><a href="#">@blueshift1.art</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -291,5 +295,16 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
   </body>
 </html>

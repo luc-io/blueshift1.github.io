@@ -121,10 +121,13 @@ body {
   footer p {
     font-size: 1.2rem;
   }
-  
+
   .col-md-6 img {
     display: block;
     max-width: 100%;
     height: auto;
     border-radius: 50%;
+  }
+  .fab {
+    margin-right: 8px; /* Adjust the value to your preference */
   }
