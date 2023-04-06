@@ -131,3 +131,6 @@ body {
   .fab {
     margin-right: 8px; /* Adjust the value to your preference */
   }
+body {
+  font-family: 'Source Code Pro', monospace;
+  }
