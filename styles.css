@@ -1,0 +1,124 @@
+body {
+    background-color: #f8f9fa; /* gray background */
+  }
+  
+  .container {
+    max-width: 800px; /* center content */
+    margin: 0 auto;
+  }
+  
+  #hero {
+    padding: 100px 0; /* add some padding for spacing */
+  }
+  
+  #hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  #hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+  }
+  
+  #hero .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+  }
+  
+  #about {
+    padding: 100px 0;
+  }
+  
+  #about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #about p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+  }
+  
+  #about .btn-secondary {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+  }
+  
+  #portfolio {
+    padding: 100px 0;
+  }
+  
+  #portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .card-deck {
+    margin-bottom: 40px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  #testimonials {
+    padding: 100px 0;
+  }
+  
+  #testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .card-body p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .card-body p.card-title {
+    font-weight: bold;
+  }
+  
+  #contact {
+    padding: 100px 0;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .form-group label {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer p {
+    font-size: 1.2rem;
+  }
+  
