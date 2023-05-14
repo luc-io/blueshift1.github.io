@@ -8,9 +8,26 @@
   <body style='margin: 0px; overflow: hidden;'>
     <a-scene embedded arjs>
       <a-marker preset="custom" type='pattern' url='pattern1.patt'>
-        <a-image src="./images/circo1.jpg" rotation="0 0 0" position="0 0 0" scale="3 3 3"></a-image>
+        <a-image id="interactiveImage" src="./images/circo1.jpg" rotation="0 0 0" position="0 0 0" scale="1 1 1"></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+    <script>
+  window.onload = function() {
+    let image = document.querySelector('#interactiveImage');
+    
+    image.addEventListener('click', function() {
+      let currentScale = image.getAttribute('scale');
+      
+      // If the image is at its original scale, enlarge it. Otherwise, reset its scale to the original.
+      if (currentScale.x === 1) {
+        image.setAttribute('scale', '2 2 2');
+      } else {
+        image.setAttribute('scale', '1 1 1');
+      }
+    });
+  };
+</script>
+
   </body>
 </html>
