@@ -1,6 +1,6 @@
 # Blender 3.5.1
 # www.blender.org
-mtllib untitled.mtl
+mtllib model1.mtl
 o bgsun
 v 0.055544 1.390025 -0.729504
 v 0.055544 1.390025 -1.853708

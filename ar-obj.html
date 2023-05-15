@@ -24,13 +24,13 @@
 
     <script>
       window.onload = function () {
-        const image = document.querySelector("#interactiveImage");
+        const model = document.querySelector("#interactiveModel");
         const zoomInButton = document.querySelector("#zoomIn");
         const zoomOutButton = document.querySelector("#zoomOut");
 
         zoomInButton.addEventListener("click", function () {
-          let currentScale = image.getAttribute("scale");
-          image.setAttribute("scale", {
+          let currentScale = model.getAttribute("scale");
+          model.setAttribute("scale", {
             x: currentScale.x * 1.1,
             y: currentScale.y * 1.1,
             z: currentScale.z * 1.1,
@@ -38,8 +38,8 @@
         });
 
         zoomOutButton.addEventListener("click", function () {
-          let currentScale = image.getAttribute("scale");
-          image.setAttribute("scale", {
+          let currentScale = model.getAttribute("scale");
+          model.setAttribute("scale", {
             x: currentScale.x / 1.1,
             y: currentScale.y / 1.1,
             z: currentScale.z / 1.1,
