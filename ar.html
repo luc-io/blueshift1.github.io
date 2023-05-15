@@ -5,38 +5,47 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ar.js/2.1.1/aframe-ar.js"></script>
   </head>
 
-  <body style='margin: 0px; overflow: hidden;'>
+  <body style="margin: 0px; overflow: hidden">
     <a-scene embedded arjs>
-      <a-marker preset="custom" type='pattern' url='pattern1.patt'>
-        <a-image id="interactiveImage" src="./images/circo1.jpg" rotation="0 0 0" position="0 0 0" scale="1 1 1"></a-image>
+      <a-marker preset="custom" type="pattern" url="pattern1.patt">
+        <a-image
+          id="interactiveImage"
+          src="./images/circo1.jpg"
+          rotation="0 0 0"
+          position="0 0 0"
+          scale="1 1 1"
+        ></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
-    
+
     <button id="zoomIn">Zoom In</button>
     <button id="zoomOut">Zoom Out</button>
-    
+
     <script>
-      window.onload = function() {
-        const image = document.querySelector('#interactiveImage');
-        const zoomInButton = document.querySelector('#zoomIn');
-        const zoomOutButton = document.querySelector('#zoomOut');
-        
-        zoomInButton.addEventListener('click', function() {
-          let currentScale = image.getAttribute('scale');
-          image.setAttribute('scale', {x: currentScale.x * 1.1, y: currentScale.y * 1.1, z: currentScale.z * 1.1});
+      window.onload = function () {
+        const image = document.querySelector("#interactiveImage");
+        const zoomInButton = document.querySelector("#zoomIn");
+        const zoomOutButton = document.querySelector("#zoomOut");
+
+        zoomInButton.addEventListener("click", function () {
+          let currentScale = image.getAttribute("scale");
+          image.setAttribute("scale", {
+            x: currentScale.x * 1.1,
+            y: currentScale.y * 1.1,
+            z: currentScale.z * 1.1,
+          });
         });
 
-        zoomOutButton.addEventListener('click', function() {
-          let currentScale = image.getAttribute('scale');
-          image.setAttribute('scale', {x: currentScale.x / 1.1, y: currentScale.y / 1.1, z: currentScale.z / 1.1});
+        zoomOutButton.addEventListener("click", function () {
+          let currentScale = image.getAttribute("scale");
+          image.setAttribute("scale", {
+            x: currentScale.x / 1.1,
+            y: currentScale.y / 1.1,
+            z: currentScale.z / 1.1,
+          });
         });
       };
     </script>
-
-  </body>
-</html>
-
-
   </body>
 </html>
