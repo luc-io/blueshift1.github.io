@@ -36,11 +36,18 @@
       <a-entity camera></a-entity>
     </a-scene>
 
+    <button
+      id="redirectButton"
+      style="position: absolute; top: 10px; left: 10px"
+    >
+      Go to Example.com
+    </button>
+
     <script>
       window.onload = function () {
-        const dejong_attractor = document.querySelector("#dejong_attractor");
+        const redirectButton = document.querySelector("#redirectButton");
 
-        dejong_attractor.addEventListener("click", function () {
+        redirectButton.addEventListener("click", function () {
           window.location.href = "https://www.example.com";
         });
       };
