@@ -9,7 +9,6 @@
       <!-- Dejong Aries -->
       <a-marker preset="custom" type="pattern" url="patt_dejong_aries.patt">
         <a-image
-          id="dejong_bg"
           src="images/dejong_bg.png"
           position="0 0.2 1"
           scale="2 2 0.7"
@@ -18,55 +17,97 @@
           material="transparent: true; opacity: 0.7; depthTest: false"
         ></a-image>
 
-        <a-entity
+        <a-image
           id="dejong_attractor"
-          geometry="primitive: box; width: 1; height: 1; depth: 1"
-          material="color: blue; opacity: 0.5"
+          src="images/dejong_attractor.png"
           position="0 0 1"
-        ></a-entity>
+          width="1"
+          height="1"
+          material="transparent: true; opacity: 1; depthTest: false"
+        ></a-image>
 
-        <a-entity
-          id="dejong_aries"
-          geometry="primitive: sphere; radius: 0.5"
-          material="color: red; opacity: 0.5"
+        <a-image
+          src="images/dejong_aries.png"
           position="0 0 1.1"
-        ></a-entity>
+          width="1"
+          height="1"
+          material="transparent: true; opacity: 1; depthTest: false"
+        ></a-image>
       </a-marker>
 
-      <a-entity camera look-controls wasd-controls> </a-entity>
+      <!-- Chromatree 44 -->
+      <a-marker preset="custom" type="pattern" url="patt_chromatree44.patt">
+        <a-image
+          src="images/bgsunx.png"
+          position="0 0.2 1"
+          scale="0.5 0.5 1"
+          width="1"
+          height="1"
+          material="transparent: true; opacity: 1;
+          depthTest: false"
+        ></a-image>
+
+        <a-image
+          src="images/tree0.png"
+          position="0 0 2"
+          width="1"
+          height="1"
+          material="transparent: true; opacity: 1; depthTest: false"
+        ></a-image>
+      </a-marker>
+
+      <a-entity camera></a-entity>
     </a-scene>
+
+    <button
+      id="redirectButtonAries"
+      style="position: absolute; top: 10px; left: 10px; display: none"
+    >
+      Go to Example.com
+    </button>
+
+    <button
+      id="redirectButtonChromatree"
+      style="position: absolute; top: 10px; left: 10px; display: none"
+    >
+      Go to Example.com
+    </button>
 
     <script>
       window.onload = function () {
-        const dejong_attractor = document.querySelector("#dejong_attractor");
-        const dejong_aries = document.querySelector("#dejong_aries");
+        const redirectButtonAries = document.querySelector(
+          "#redirectButtonAries"
+        );
+        const redirectButtonChromatree = document.querySelector(
+          "#redirectButtonChromatree"
+        );
 
-        dejong_attractor.addEventListener("touchstart", function (e) {
-          e.preventDefault();
-          var clickEvent = new MouseEvent("click", {
-            view: window,
-            bubbles: true,
-            cancelable: false,
-          });
-          this.dispatchEvent(clickEvent);
+        const ariesMarker = document.querySelector(
+          "a-marker[preset='custom'][url='patt_dejong_aries.patt']"
+        );
+        const chromatreeMarker = document.querySelector(
+          "a-marker[preset='custom'][url='patt_chromatree44.patt']"
+        );
+
+        ariesMarker.addEventListener("markerFound", function () {
+          redirectButtonAries.style.display = "block";
+        });
+        ariesMarker.addEventListener("markerLost", function () {
+          redirectButtonAries.style.display = "none";
+        });
+        chromatreeMarker.addEventListener("markerFound", function () {
+          redirectButtonChromatree.style.display = "block";
+        });
+        chromatreeMarker.addEventListener("markerLost", function () {
+          redirectButtonChromatree.style.display = "none";
         });
 
-        dejong_attractor.addEventListener("click", function () {
-          window.location.href = "https://www.example1.com";
+        redirectButtonAries.addEventListener("click", function () {
+          window.location.href = "https://www.example.com";
         });
 
-        dejong_aries.addEventListener("touchstart", function (e) {
-          e.preventDefault();
-          var clickEvent = new MouseEvent("click", {
-            view: window,
-            bubbles: true,
-            cancelable: false,
-          });
-          this.dispatchEvent(clickEvent);
-        });
-
-        dejong_aries.addEventListener("click", function () {
-          window.location.href = "https://www.example2.com";
+        redirectButtonChromatree.addEventListener("click", function () {
+          window.location.href = "https://www.example.com";
         });
       };
     </script>
