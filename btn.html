@@ -33,7 +33,9 @@
         ></a-entity>
       </a-marker>
 
-      <a-entity camera></a-entity>
+      <a-entity camera look-controls wasd-controls>
+        <a-cursor fuse="true" fuseTimeout="2000"></a-cursor>
+      </a-entity>
     </a-scene>
 
     <script>
@@ -45,7 +47,15 @@
           window.location.href = "https://www.example1.com";
         });
 
+        dejong_attractor.addEventListener("fusing", function () {
+          window.location.href = "https://www.example1.com";
+        });
+
         dejong_aries.addEventListener("click", function () {
+          window.location.href = "https://www.example2.com";
+        });
+
+        dejong_aries.addEventListener("fusing", function () {
           window.location.href = "https://www.example2.com";
         });
       };
