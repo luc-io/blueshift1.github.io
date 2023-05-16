@@ -33,9 +33,7 @@
         ></a-entity>
       </a-marker>
 
-      <a-entity camera look-controls wasd-controls>
-        <a-cursor fuse="true" fuseTimeout="2000"></a-cursor>
-      </a-entity>
+      <a-entity camera look-controls wasd-controls> </a-entity>
     </a-scene>
 
     <script>
@@ -43,19 +41,31 @@
         const dejong_attractor = document.querySelector("#dejong_attractor");
         const dejong_aries = document.querySelector("#dejong_aries");
 
+        dejong_attractor.addEventListener("touchstart", function (e) {
+          e.preventDefault();
+          var clickEvent = new MouseEvent("click", {
+            view: window,
+            bubbles: true,
+            cancelable: false,
+          });
+          this.dispatchEvent(clickEvent);
+        });
+
         dejong_attractor.addEventListener("click", function () {
           window.location.href = "https://www.example1.com";
         });
 
-        dejong_attractor.addEventListener("fusing", function () {
-          window.location.href = "https://www.example1.com";
+        dejong_aries.addEventListener("touchstart", function (e) {
+          e.preventDefault();
+          var clickEvent = new MouseEvent("click", {
+            view: window,
+            bubbles: true,
+            cancelable: false,
+          });
+          this.dispatchEvent(clickEvent);
         });
 
         dejong_aries.addEventListener("click", function () {
-          window.location.href = "https://www.example2.com";
-        });
-
-        dejong_aries.addEventListener("fusing", function () {
           window.location.href = "https://www.example2.com";
         });
       };
