@@ -146,3 +146,15 @@ body {
 body {
   font-family: 'Source Code Pro', monospace;
   }
+  .img-margin-top {
+    margin-top: 50px; /* change this value to adjust the space */
+}
+.artwork-details {
+  /* Add your styles here */
+}
+.artwork-details p {
+  margin-top: 20px;
+}
+.artwork-details a {
+  /* Styles for the link elements */
+}
