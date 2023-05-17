@@ -149,15 +149,15 @@ body {
   .img-margin-top {
     margin-top: 50px; /* change this value to adjust the space */
 }
-.artwork-details {
-  /* Add your styles here */
-}
+/* .artwork-details {
+  Add your styles here
+} */
 .artwork-details p {
   margin-top: 20px;
 }
-.artwork-details a {
-  /* Styles for the link elements */
-}
+/* .artwork-details a {
+  Styles for the link elements
+} */
 
 .badge {
   display: inline-block;
@@ -178,4 +178,8 @@ body {
 
 .footer-margin {
   margin-top: 50px;
+}
+.mt-4 {
+  margin-top: 20px;
+  margin-bottom:20px;
 }
