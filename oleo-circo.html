@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>En el corazón del circo</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="./css/fontawesome-free-6.4.0-web/css/all.min.css"
+    />
+    <link rel="icon" href="./images/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/styles.css " />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">marestellato</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Artwork Section -->
+    <section id="artwork">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div>
+              <img
+                class="img-fluid img-margin-top"
+                src="./images/oleo-vuelo.jpg"
+                alt="Generative Design NFT"
+              />
+              <h2>En el corazón del circo</h2>
+            </div>
+            <div class="d-flex align-items-center">
+              <a
+                href="https://objkt.com/asset/KT1KKHP8Lu36r9J4VBeWbzgvxL4rJEDkR44t/1"
+                class="btn btn-outline-dark mr-3"
+              >
+                Adquirir NFT
+              </a>
+              <div class="share-links">
+                <button class="btn btn-outline-dark" onclick="share()">
+                  Compartir <i class="fas fa-share-alt"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="artwork-details">
+              <p>
+                Transformación entre sombras y luces<br />
+                <br />
+
+                4566 x 3044 px
+              </p>
+              <p><strong>Precio:</strong> 1 ꜩ</p>
+              <p><strong>Regalías:</strong> 10%</p>
+              <p>
+                <strong>Etiquetas:</strong>
+                <span class="badge badge-primary">animation</span>
+                <span class="badge badge-primary">generative</span>
+                <span class="badge badge-primary">generativeart</span>
+              </p>
+              <p>
+                <strong>Metadata:</strong>
+                <a
+                  href="https://ipfs.io/ipfs/QmcZso95JjdoeGaivPp3oVvNLE5BEx5ko7F5jiPg8LNSb6"
+                  target="_blank"
+                >
+                  Ver en IPFS
+                </a>
+              </p>
+              <p><strong>Creado:</strong> 12 mayo 2023</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer-margin">
+      <div class="container">
+        <p>&copy; 2023 marestellato.com</p>
+      </div>
+    </footer>
+    <script>
+      function share() {
+        if (navigator.share) {
+          navigator
+            .share({
+              title: "En el corazón del circo",
+              //   text: "Check out this awesome NFT!",
+              url: "https://objkt.com/asset/KT1KKHP8Lu36r9J4VBeWbzgvxL4rJEDkR44t/1",
+            })
+            .then(() => console.log("Successful share"))
+            .catch((error) => console.log("Error sharing", error));
+        } else {
+          console.log("Share not supported on this browser, do it manually!");
+        }
+      }
+    </script>
+  </body>
+</html>
