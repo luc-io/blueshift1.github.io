@@ -4,16 +4,101 @@
   <!-- we import arjs version without NFT but with marker + location based support -->
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <body style="margin: 0px; overflow: hidden">
+    <div
+      id="loader"
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      Loading...
+    </div>
+    <div
+      id="green-dot"
+      style="
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 15px;
+        height: 15px;
+        background-color: green;
+        border-radius: 50%;
+      "
+    ></div>
+    <div
+      id="red-dot"
+      style="
+        display: none;
+        position: absolute;
+        top: 10px;
+        left: 30px;
+        width: 15px;
+        height: 15px;
+        background-color: red;
+        border-radius: 50%;
+      "
+    ></div>
+
     <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
-        <a-entity
-          position="0 0 0"
-          scale="0.5 0.5 0.5"
-          gltf-model="./gltf-model/AnimatedCube.gltf"
-        ></a-entity>
+      <a-marker preset="hiro" image-loader>
+        <a-image
+          src="images/808_up_p35_s216639211_c0.34.png"
+          onload="hideLoadingIndicator()"
+          position="0 0 0.01"
+          scale="2 2 1"
+          width="1"
+          height="1"
+          rotation="-90 0 0"
+          material="transparent: true; opacity: 0.7; depthTest: false"
+        ></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
+    <script>
+      AFRAME.registerComponent("image-loader", {
+        init: function () {
+          const marker = this.el;
+          const loader = document.getElementById("loader");
+          const greenDot = document.getElementById("green-dot");
+          const redDot = document.getElementById("red-dot");
+
+          // Inside your image-loader component
+          marker.addEventListener("markerFound", () => {
+            greenDot.style.display = "block";
+            redDot.style.display = "none";
+            loader.style.display = "flex";
+
+            // Optional Timeout
+            setTimeout(() => {
+              hideLoadingIndicator(); // In case of a very slow image
+            }, 5000); // Timeout of 5 seconds (adjust as needed)
+          });
+
+          function hideLoadingIndicator() {
+            loader.style.display = "none";
+          }
+
+          marker.addEventListener("markerLost", () => {
+            console.log("Marker Lost!");
+            greenDot.style.display = "none";
+            redDot.style.display = "block";
+          });
+
+          // Hide loader once the image has a texture
+          // marker.addEventListener("loaded", () => {
+          //   const image = marker.getObject3D("mesh");
+          //   if (image && image.material && image.material.map) {
+          //     loader.style.display = "none";
+          //   }
+          // });
+        },
+      });
+    </script>
   </body>
 </html>

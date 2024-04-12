@@ -183,3 +183,7 @@ body {
   margin-top: 20px;
   margin-bottom:20px;
 }
+
+#green-dot, #red-dot {
+  z-index: 10; /* Or higher as needed */
+}
