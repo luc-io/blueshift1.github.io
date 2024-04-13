@@ -87,23 +87,35 @@
 
     <a-scene embedded arjs>
       <a-marker preset="hiro" image-loader>
-        <a-image
-          src="images/829_up_p41_s2501908644_c0.35.png"
-          onload="hideLoadingIndicator()"
-          position="0 0 0.01"
-          scale="2 2 1"
-          width="1"
-          height="1"
-          rotation="-90 0 0"
-          material="transparent: true; opacity: 0.7; depthTest: false"
-        ></a-image>
         <a-video
-          src="images/849_vid_seed802328642_cfg2.1_mb31.mp4"
-          position="0 0.1 0.02"
+          src="images/873_vid_seed917209182_cfg1.7_mb91.mp4"
+          position="0 0.1 0"
           width="2"
           height="1.5"
           rotation="-90 0 0"
         ></a-video>
+
+        <a-image
+          src="images/829_up_p41_s2501908644_c0.35_fondo_large.png"
+          onload="hideLoadingIndicator()"
+          position="0 0 0.02"
+          scale="2 2 1"
+          width="1"
+          height="1"
+          rotation="-90 0 0"
+          material="transparent: true; opacity: 1; depthTest: false"
+        ></a-image>
+
+        <a-image
+          src="images/829_up_p41_s2501908644_c0.35_marco_large.png"
+          onload="hideLoadingIndicator()"
+          position="0 0 0.04"
+          scale="2 2 1"
+          width="1"
+          height="1"
+          rotation="-90 0 0"
+          material="transparent: true; opacity: 1; depthTest: false"
+        ></a-image>
       </a-marker>
       <a-entity camera></a-entity>
     </a-scene>
